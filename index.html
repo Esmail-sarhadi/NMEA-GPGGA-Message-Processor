@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" type="image/png" href="android-chrome-512x512.png">
+    <meta name="google-site-verification" content="vqq11CWNVkLVnZvjCeZReKc8-FRmgxek2SOWjr35CbY" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>NMEA GPGGA Message Processor | NMEA-GPGGA-Message-Processor</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="NMEA GPGGA Message Processor" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="This project processes NMEA GPGGA messages from a text file. It extracts and validates critical data such as time, latitude, longitude, and satellite count from each GPGGA message. The program reads the input from a file named “nmea_messages.txt” and outputs the extracted information to the console" />
+<meta property="og:description" content="This project processes NMEA GPGGA messages from a text file. It extracts and validates critical data such as time, latitude, longitude, and satellite count from each GPGGA message. The program reads the input from a file named “nmea_messages.txt” and outputs the extracted information to the console" />
+<link rel="canonical" href="https://esmail-sarhadi.github.io/NMEA-GPGGA-Message-Processor/" />
+<meta property="og:url" content="https://esmail-sarhadi.github.io/NMEA-GPGGA-Message-Processor/" />
+<meta property="og:site_name" content="NMEA-GPGGA-Message-Processor" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="NMEA GPGGA Message Processor" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","description":"This project processes NMEA GPGGA messages from a text file. It extracts and validates critical data such as time, latitude, longitude, and satellite count from each GPGGA message. The program reads the input from a file named “nmea_messages.txt” and outputs the extracted information to the console","headline":"NMEA GPGGA Message Processor","name":"NMEA-GPGGA-Message-Processor","url":"https://esmail-sarhadi.github.io/NMEA-GPGGA-Message-Processor/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/NMEA-GPGGA-Message-Processor/assets/css/style.css?v=3fe9fe3439ce9e051314bb088fb36f64c7ab22af">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/NMEA-GPGGA-Message-Processor/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5 markdown-body">
+      
+      <h1><a href="https://esmail-sarhadi.github.io/NMEA-GPGGA-Message-Processor/">NMEA-GPGGA-Message-Processor</a></h1>
+      
+
+      
+<h1 id="nmea-gpgga-message-processor">NMEA GPGGA Message Processor</h1>
+
+<p>This project is designed to process NMEA GPGGA messages from a text file. The program extracts and validates critical data such as time, latitude, longitude, and satellite count from each GPGGA message and outputs this information to the console.</p>
+
+<p><img src="/NMEA-GPGGA-Message-Processor/Images/1.png" alt="Alt text" />
+<img src="/NMEA-GPGGA-Message-Processor/Images/2.png" alt="Alt text" /></p>
+
+<h2 id="features">Features</h2>
+
+<ul>
+  <li>Reads NMEA GPGGA messages from a file.</li>
+  <li>Extracts and validates time, latitude, longitude, and satellite count.</li>
+  <li>Handles errors for invalid data and ensures proper formatting and validation.</li>
+  <li>Outputs the processed data to the console.</li>
+</ul>
+
+<h2 id="file-structure">File Structure</h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">main.c</code>: The main C source file containing the implementation of the NMEA GPGGA message processing.</li>
+  <li><code class="language-plaintext highlighter-rouge">nmea_messages.txt</code>: The input text file containing NMEA messages.</li>
+</ul>
+
+<h2 id="usage">Usage</h2>
+
+<ol>
+  <li><strong>Compile the Program:</strong>
+Use a C compiler to compile the program. For example, using <code class="language-plaintext highlighter-rouge">gcc</code>:
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gcc <span class="nt">-o</span> nmea_processor main.c
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><strong>Prepare the Input File:</strong>
+Ensure that your input file <code class="language-plaintext highlighter-rouge">nmea_messages.txt</code> is in the same directory as the compiled executable. The file should contain NMEA messages, one per line.</p>
+  </li>
+  <li><strong>Run the Program:</strong>
+Execute the compiled program:
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./nmea_processor
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Output:</strong>
+The program will output the extracted and validated data to the console. If any errors are encountered during processing, appropriate error messages will be displayed.</li>
+</ol>
+
+<h2 id="example">Example</h2>
+
+<h3 id="input-nmea_messagestxt">Input (<code class="language-plaintext highlighter-rouge">nmea_messages.txt</code>):</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$GPGGA,123519,4807.038,N,01131.000,E,1,08,0.9,545.4,M,46.9,M,,*47
+$GPGGA,invalid message
+$GPGGA,225444,3731.234,S,14507.567,W,1,12,0.8,12.0,M,-34.0,M,,*75
+</code></pre></div></div>
+
+<h3 id="output">Output:</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Time: 12:35:19.000, Latitude: 4807.038N, Longitude: 01131.000E, Satellites: 8
+Error: Invalid message type
+Time: 22:54:44.000, Latitude: 3731.234S, Longitude: 14507.567W, Satellites: 12
+</code></pre></div></div>
+
+<h2 id="license">License</h2>
+
+<p>This project is licensed under the MIT License. See the <a href="/NMEA-GPGGA-Message-Processor/LICENSE">LICENSE</a> file for details.</p>
+
+<h2 id="contributions">Contributions</h2>
+
+<p>Contributions are welcome! Please fork this repository and submit a pull request for any enhancements or bug fixes.</p>
+<h2 id="profile">Profile</h2>
+
+<p>Check out my GitHub profile: <a href="https://github.com/Esmail-sarhadi" target="_blank">Esmail Sarhadi</a></p>
+
+<h2 id="project-link">Project Link</h2>
+
+<p>View this project on GitHub: <a href="https://github.com/Esmail-sarhadi/NMEA-GPGGA-Message-Processor" target="_blank">NMEA-GPGGA-Message-Processor</a></p>
+
+<h2 id="donation">Donation</h2>
+
+<p>If you find this project helpful, consider making a donation:</p>
+<p><a href="https://nowpayments.io/donation?api_key=REWCYVC-A1AMFK3-QNRS663-PKJSBD2&source=lk_donation&medium=referral" target="_blank">
+     <img src="https://nowpayments.io/images/embeds/donation-button-black.svg" alt="Crypto donation button by NOWPayments">
+</a></p>
+<h2 id="contact">Contact</h2>
+
+<p>For any questions or suggestions, please feel free to contact me at [sarhadiesmail@gmail.com].</p>
+
+
+      
+      <div class="footer border-top border-gray-light mt-5 pt-3 text-right text-gray">
+        This site is open source. <a href="https://github.com/Esmail-sarhadi/NMEA-GPGGA-Message-Processor/edit/main/README.md">Improve this page</a>.
+      </div>
+      
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>anchors.add();</script>
+  </body>
+</html>
